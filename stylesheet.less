@@ -1,0 +1,1944 @@
+@import "@{templateCommon}/basekit-bootstrap.less";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic|Sanchez);
+
+@tablet: ~"only screen and (max-width: 950px)";
+@mobile: ~"only screen and (max-width: 480px)";
+
+body {
+  background-color: @color-swatch1;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 5%;
+}
+
+.canvas  {
+  background-color: darken(@color-swatch1,5%);
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 0 60px;
+}
+
+/* ===============================
+   CUSTOM CSS
+   =============================== */
+
+.main {
+  padding: 40px 0;
+}
+
+body.edit .widget.navigation, body.edit .widget.extendednavigation {
+ overflow: visible;
+}
+
+h5 {
+    font-size: @font-swatch5-font-size;
+    font-family: @font-swatch5-font-family;
+    color: @font-swatch5-color;
+    line-height: @font-swatch5-line-height;
+    font-weight: @font-swatch4-font-weight;
+}
+
+blockquote {
+    background-color: darken(@color-swatch1, 5%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    &:before {
+        content: open-quote;
+        left: 10px;
+        top: 22px;
+        font-family: georgia;
+        font-size: 40px;
+        color: @color-swatch3;
+    }
+}
+
+/* ===============================
+   PROFILE WIDGET
+   =============================== */
+
+.widget.profile span,
+.widget.profile a {
+    display: block;
+    font-size: @font-swatch5-font-size;
+    font-family: @font-swatch5-font-family;
+    color: @font-swatch5-color;
+    line-height: @font-swatch5-line-height;
+    font-weight: @font-swatch5-font-weight;
+}
+
+.widget.profile a {
+    color: @color-swatch3;
+}
+
+.widget.profile a:hover {
+    color: lighten(@color-swatch3,15%);
+    text-decoration: none;
+}
+
+/* ===============================
+   LATEST TWEET IN FOOTER 
+   =============================== */
+
+.widget.profile .twitter a {
+   color: @color-swatch4;
+   font-size:@font-swatch5-font-size;
+   text-decoration: none;
+}
+
+.widget.profile .twitter a:hover {
+    text-decoration: underline;
+}
+
+.widget.profile .twitter {
+    padding: 0;
+    margin: 0;
+}
+
+.widget.profile .twitter li {
+    border-bottom: none;
+    list-style: none;
+    font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    color: @font-swatch5-color;
+    padding: 0;
+    border-bottom: none;
+}
+
+.widget.profile .twitter .twitter-profile-pic {
+    display: none;
+}
+
+.widget.profile .twitter a img {
+  border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius:  30px;
+    border-radius: 30px;
+}
+
+.widget.profile .twitter .twitter-content span.bk-full-name {
+    font-family: @font-swatch5-font-family;
+    color: @color-swatch1;
+    font-weight: bold;
+}
+
+.widget.profile .twitter .twitter-content a:hover {
+  text-decoration: underline;
+}
+
+.widget.profile .twitter time, .widget.profile .twitter span, .widget.profile .twitter span a {
+color: @color-swatch1;
+}
+
+footer.bk-footer .widget.profile .twitter span {
+  display: inline;
+}
+
+
+/* ===============================
+   SINGLE EMAIL FORM IN FOOTER
+   =============================== */
+
+.widget.profile fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget.profile fieldset label {
+    width: 100%;
+    float: left;
+    font-family: @font-swatch5-font-family;
+    color: lighten(@color-swatch5,10%);
+    line-height:@font-swatch5-line-height;
+    letter-spacing: @font-swatch4-letter-spacing;
+}
+
+.widget.profile fieldset input {
+    height: 44px;
+    width: 75%;
+    font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    color: @font-swatch5-color;
+    text-indent: 8px;
+    margin-top: 6px;
+    padding: 0;
+    float: left;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.widget.profile form fieldset input {
+    height: 44px;
+    width: 75%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.widget.profile fieldset button.btn {
+    width: 25%;
+    height: 44px;
+    padding: 1px;
+    margin-top: 6px;
+    //border: 1px solid darken(@color-swatch3,5%);
+    font-size: @font-swatch7-font-size;
+    font-family: @font-swatch7-font-family;
+    color: @font-swatch7-color;
+    line-height: @font-swatch7-line-height;
+    font-weight: @font-swatch7-font-weight;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.widget.profile fieldset button.btn:hover {
+    background-color: @font-swatch7-background-color-hover;
+    cursor: pointer;
+}
+
+
+/* ===============================
+   HEADER
+   =============================== */
+
+header.bk-header {
+  padding: 0;
+  background-color: @color-swatch7;
+}
+
+.companyheader {
+  display: block;
+  float: left;
+  padding: 16px 0px;
+  width: 30%;
+}
+
+/* COMPANY NAME */
+
+.widget.companyname {
+  margin-top: 5px;
+  a {
+    font-size: @font-swatch10-font-size;
+    @media @mobile {
+      font-size: bkscale(@font-swatch10-font-size, 1);
+    }
+  }
+}
+
+/* LOGO */
+
+.widget.logo {
+    margin-right: 10px;
+    height: 40px;
+    a img {
+        max-height: 40px;
+    }
+}
+
+.widget {
+    &.logo, &.companyname {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+footer.bk-footer {
+  padding: 4em 0;
+  background-color: @color-swatch7;
+  min-height: 150px;
+  color: @color-swatch1;
+}
+
+footer.bk-footer h2 {
+  color: @color-swatch1;
+  font-size:bkscale(@font-swatch2-font-size, 0.9);
+  padding-bottom: 20px;
+}
+
+footer.bk-footer p {
+    font-family: @font-swatch5-font-family;
+    color: @font-swatch5-color;
+    line-height:@font-swatch5-line-height;
+}
+
+footer.bk-footer span {
+  color: @color-swatch1;
+}
+
+footer .widget.profile .bk-profile-socialicons span a {
+    background-color: @color-swatch2;
+    &:hover {
+        background-color: darken(@color-swatch2,5%);
+    }
+}
+
+/* ===============================
+   EXTENDED NAVIGATION
+   =============================== */
+
+.widget.extendednavigation {
+  .clearfix;
+  float: right;
+  width: 70%;
+  //padding: 11px 0px 7px;
+    @media (max-width: 960px) {
+      max-width: 100%;
+    }
+}
+
+.widget.extendednavigation ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+div.widget .extendednavigation ul li, div.widget.extendednavigation ul li {
+    padding: 10px;
+    &:hover {
+        background-color: @font-swatch6-background-color-hover;
+    }
+}
+
+.widget.extendednavigation ul li {
+  float: left;
+  display: block;
+}
+
+.widget.extendednavigation ul li.folder {
+    &:hover {
+        background-color: @color-swatch2;
+    }
+}
+
+.widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
+  display: block;
+  padding: 12px 25px;
+  text-transform: uppercase;
+}
+
+.widget.extendednavigation ul li a:hover {
+  text-decoration: none;
+  color: @font-swatch6-color;
+}
+
+/* SELECTED */
+
+.widget.extendednavigation ul li.selected {
+    span.text {
+      color: @color-swatch1;
+    }
+}
+
+.widget.extendednavigation ul li.folder ul li a {
+  padding: 0;
+}
+
+/* FOLDER */
+
+.widget.extendednavigation ul li.folder {
+  margin-right: 0;
+  &:after {
+    right: 11px;
+    top: 49%;
+  }
+}
+
+.widget.extendednavigation ul li.folder .text:hover {
+  color: @color-swatch1;
+  background-color: @color-swatch2;
+}
+
+.widget .extendednavigation ul li.folder:after {
+  border-top-color: @font-swatch6-color;
+}
+
+/* DROPDOWN MENU */
+
+.widget.extendednavigation ul li:hover > ul {
+  background-color: @color-swatch2;
+  padding: 0;
+}
+
+.widget.extendednavigation ul li:hover ul li a span.text:hover {
+    background-color: darken(@color-swatch2, 5%);
+}
+
+.widget.extendednavigation li:hover > ul > li {
+  display: block;
+  width: 100%;
+  padding: 0;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.widget .extendednavigation li ul {
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* .widget .extendednavigation a.pull {
+    display: none;
+	    @media @tablet {
+                position: absolute;
+			    right: 0;
+                top: -43px; 
+			    display: inline-block;
+			    width: 40px;
+				height: 40px;
+				border: none;
+				text-indent: -900em;
+				overflow: hidden;
+				cursor: pointer;
+				outline: none;
+				padding: 0;
+				&:after {
+					content: '';
+					position: absolute;
+					width: 26px;
+					height: 3px;
+					background: #c7c7c7;
+					top: 0;
+					right: 0;
+					box-shadow: 0 6px 0 #c7c7c7, 0 12px 0 #c7c7c7;
+                }
+	    }  */  
+
+
+/* ===============================
+   FEATURE
+   =============================== */
+
+ .widget.feature {
+  width: 100%;
+  padding: 0;
+}
+
+.widget.feature .feature-bgimg {
+  height: 500px; /* should be in media query*/
+ }
+
+.widget.feature .content {
+  height: 500px;
+  text-align: center;
+}
+
+.widget.feature .content .spare {
+  max-width: 960px;
+  padding: 40px;
+  margin: 0 auto; 
+}
+
+/* FEATURE TITLE */
+
+.widget.feature h2 {
+  display: inline-block;
+  letter-spacing: 1px;
+  padding-bottom: 0;
+  margin-bottom: 10px;
+  text-shadow: 0px 1px 2px fade(@color-swatch7, 70%);
+}
+
+/* FEATURE STRAPLINE */
+
+.widget.feature h3 {
+    font-style: italic;
+    text-shadow: 0px 1px 2px fade(@color-swatch7, 70%);
+}
+
+/* FEATURE BUTTON */
+
+.widget.feature button
+{
+  margin: 1em 0;
+  padding: 12px 36px;
+  border: 0;
+  font-family:@font-swatch7-font-family;
+  font-size:@font-swatch7-font-size;
+  font-weight: @font-swatch7-font-weight;
+  line-height:@font-swatch7-line-height;
+  color: @font-swatch7-color;
+  letter-spacing: @font-swatch7-letter-spacing;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.widget.feature button:hover 
+{
+  background-color: @font-swatch7-background-color-hover;
+  cursor: pointer;
+  -webkit-transition: background-color 0.15s ease-in-out;
+  -moz-transition: background-color 0.15s ease-in-out;
+  -o-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* ===============================
+   FEATURE LAYOUTS
+   =============================== */
+
+/* LEFT ALIGN */
+
+.widget.feature.align-left .content {
+  width: 100%;
+  text-align: left;
+}
+
+/* CENTER ALIGN */
+
+.widget.feature.align-center .content {
+  width: 100%;
+  text-align: center;
+}
+
+/* RIGHT ALIGN */
+
+.widget.feature.align-right .content {
+  width: 100%;
+  text-align: right;
+}
+
+/* ===============================
+   IMAGE WIDGET
+   =============================== */
+
+.widget.image img {
+    display: block;
+    max-width: 100%;
+    border: 0;
+    border-width: 0;
+}
+
+.widget.image {
+
+}
+
+.widget.image span.image-title {
+    display: block;
+    margin: 5px;
+    font-family: @font-swatch4-font-family;
+    font-weight: @font-swatch4-font-weight;
+    font-size: @font-swatch4-font-size;
+    text-align: center;
+    line-height: @font-swatch4-line-height;
+}
+
+.widget.image span.image-description {
+    display: block;
+    margin: 5px;
+    text-align: center;
+    font-family: @font-swatch5-font-family;
+    font-weight: @font-swatch5-font-weight;
+    font-size: @font-swatch5-font-size;
+    line-height: @font-swatch5-line-height;
+}
+
+
+/* ===============================
+   BUTTON CSS
+   =============================== */
+
+
+.widget.button {
+    padding: 0;
+}
+
+
+.widget.button button {
+  margin: 1em 0;
+  padding: 12px 36px;
+  border: 0;
+  font-family:@font-swatch7-font-family;
+  font-size:@font-swatch7-font-size;
+  font-weight: @font-swatch7-font-weight;
+  line-height:@font-swatch7-line-height;
+  color: @font-swatch7-color;
+  letter-spacing: @font-swatch7-letter-spacing;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.widget.button button:hover 
+{
+  background-color: @font-swatch7-background-color-hover;
+  cursor: pointer;
+  -webkit-transition: background-color 0.15s ease-in-out;
+  -moz-transition: background-color 0.15s ease-in-out;
+  -o-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+} 
+
+.widget.paypalbuynow .widget.button.paypal {
+    text-transform: uppercase;
+    font-family:@font-swatch7-font-family;
+    font-size:@font-swatch7-font-size;
+    font-weight: @font-swatch7-font-weight;
+    line-height:@font-swatch7-line-height;
+    color: @font-swatch7-color;
+    letter-spacing: @font-swatch7-letter-spacing;
+}
+
+.widget.dropbox button {
+    text-transform: uppercase;
+}
+
+.widget.clicktocall a {
+    text-transform: uppercase;
+}
+
+button, button.btn, .blogsearch form button {
+   background-color: @font-swatch7-background-color;
+   text-transform: uppercase;
+   &:hover {
+    background-color: @font-swatch7-background-color-hover;
+   }
+}
+
+/* ===============================
+   CONTENT CSS
+   =============================== */
+
+
+.widget.content
+{
+    padding: 0;
+    overflow: hidden;
+}
+
+.widget.content span.expand
+{
+    font-family: @font-swatch3-font-family;
+    background-color: @color-swatch3;
+    color: @font-swatch7-color;
+    font-size: @font-swatch5-font-size;
+    padding: 4px 8px;
+    margin: 4px 0;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.widget.content span.expand:hover,
+.widget.content span.expand:focus
+{
+    cursor: pointer;
+    background-color: darken(@color-swatch3,5%);
+}
+
+@media only screen and (min-width: 768px) {
+    .widget.content .bk-content-text {
+        overflow: visible!important;
+        height: auto!important;
+    }
+    .widget.content span.expand {
+        display:none!important;
+    }
+}
+
+/* ===============================
+   IMAGE WIDGET
+   =============================== */
+
+.widget.image img
+{
+    display:block;
+    max-width: 100%;
+}
+
+.widget.image {
+}
+
+.widget.image span.image-title {
+    display: block;
+    margin:5px;
+    font-family: @font-swatch4-font-family;
+    font-weight: @font-swatch4-font-weight;
+    font-size: @font-swatch4-font-size;
+    text-align: center;
+    line-height: @font-swatch4-line-height;
+}
+
+.widget.image span.image-description {
+    display: block;
+    margin:5px;
+    text-align: center;
+    font-family: @font-swatch5-font-family;
+    font-weight: @font-swatch5-font-weight;
+    font-size: @font-swatch5-font-size;
+    line-height: @font-swatch5-line-height;
+}
+
+// -----------------------------
+// Gallery
+// -----------------------------
+
+.widget.gallery {
+    margin: 20px 0 20px -0.5%;
+    ul li {
+        @media @tablet {
+            width: 50%;
+            padding-bottom: 50%;
+        }
+        @media @mobile {
+            width: 100%;
+            padding-bottom: 100%;
+        }
+        span.inner {
+            .title,
+            .description {
+                // Font
+                color: @color-swatch1;
+                font-family: @font-swatch4-font-family;
+                letter-spacing: @font-swatch4-letter-spacing;
+                text-align: left;
+            }
+            .title {
+                font-size: 19px;
+                font-weight: 600;
+                line-height: 26px;
+            }
+            .description {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+    // Image Data
+    .image-data {
+        display: block;
+        opacity: 0;
+        background-color: fade(@color-swatch3, 80%);
+        -webkit-transition: all 0.4s ease-out;
+        -moz-transition: all 0.4s ease-out;
+        -o-transition: all 0.4s ease-out;
+        transition: all 0.4s ease-out;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+/* Lightbox */
+
+.lb-data .lb-caption, .lb-data .lb-number {
+  font-family:@font-swatch5-font-family;
+  font-size:@font-swatch5-font-size;
+  font-weight: @font-swatch5-font-weight;
+  line-height:@font-swatch5-line-height;
+  color:lighten(@font-swatch5-color,50%);
+}
+
+.lb-data .lb-number {
+  font-size:bkscale(@font-swatch5-font-size,0.9);
+}
+
+
+/* ===============================
+   DIVIDER WIDGET
+   =============================== */
+
+.widget.line {
+    padding: 20px 0;
+}
+
+hr.line {
+   background-color: lighten(@color-swatch5,18%);
+   height: 1px;
+   width: 100%;
+   border: none;
+}
+
+hr.line.align-left {
+   margin: 20px auto 20px 0px;
+}
+
+hr.line.align-center {
+   margin: 20px auto;
+}
+
+hr.line.align-right {
+   margin: 20px 0px 20px auto;
+}
+
+/* ===============================
+   REDIRECT WIDGET
+   =============================== */
+
+.widget.redirecttodesktop {
+    padding: 8px 0;
+}
+
+.widget.redirecttodesktop a {
+    padding-right: 30px;
+    padding-top: 2px;
+    background-image: image('/images/desktop.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    font-size: 12px;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    text-decoration: none;
+    cursor: pointer;
+    color: @font-swatch5-color;
+    font-family: @font-swatch5-font-family;
+
+}
+
+.widget.redirecttodesktop a:hover, .desktop a:active {
+    background-image: image('/images/desktop.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ===============================
+   TWITTER WIDGET
+   =============================== */
+
+.widget.twitter {
+  margin: 20px 0;
+}
+
+.widget.twitter p {
+  font-size: 1.5em;
+  line-height: 1.6em;
+}
+
+.widget.twitter a {
+   color: @font-swatch5-color;
+   text-decoration: none;
+   padding-bottom: 4px;
+}
+
+.widget.twitter span a {
+  border-bottom: 0;
+  font-size: 11px;
+  color: @color-swatch3;
+}
+
+.widget.twitter a:hover {
+
+}
+
+.widget.twitter ul {
+    padding: 0px;
+    margin: 0;
+}
+
+.widget.twitter ul li {
+    border-bottom: none;
+    list-style: none;
+    font-family: @font-swatch5-font-family;
+    font-size: .6em;
+    color: @font-swatch5-color;
+    padding-bottom: 30px;
+}
+
+.widget.twitter ul li:last-child {
+    padding-bottom: 0px;
+}
+
+.widget.twitter .twitter-profile-pic {
+    float: left;
+    margin-right: 20px;
+    @media @mobile {
+        display: none;
+    }
+}
+
+.widget.twitter .twitter-profile-pic a {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.widget.twitter time {
+    font-size: 11px;
+}
+
+.widget.twitter .twitter-content span.bk-full-name {
+    line-height: 40px;
+}
+
+/* ===============================
+   TWEET THIS WIDGET
+   =============================== */
+
+.widget.tweet a {
+    -webkit-font-smoothing: initial;
+    text-transform: uppercase;
+}
+
+
+/* ===============================
+   SIGNUP FORM WIDGET
+   =============================== */
+
+.widget.signupform {
+    display: block;
+    padding: 30px;
+    margin: 0 0 20px;
+    max-width: 400px;
+    background-color: fade(@color-swatch3, 7%);
+    border: 1px solid fade(@color-swatch3, 20%);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    @media @mobile {
+        padding: 20px;
+    }
+}
+
+.widget.signupform fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.widget.signupform label {
+    float: left;
+    width: 100%;
+    margin-bottom: 4px;
+    color: @color-swatch4;
+}
+
+.widget.signupform fieldset input {
+    height: 52px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: @color-swatch1;
+    border: 1px solid fade(@color-swatch3, 25%);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+.signupform fieldset button {
+    padding: 8px 30px;
+    text-transform: uppercase;
+    height: 44px;
+    line-height: 0;
+}
+
+/* ===============================
+   CONTACT FORM WIDGET
+   =============================== */
+
+.widget.contactform form {
+    display: block;
+    padding: 30px;
+    margin: 0 0 20px;
+    background-color: fade(@color-swatch3, 7%);
+    border: 1px solid fade(@color-swatch3, 20%);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.widget.contactform fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget.contactform fieldset label {
+    width: 100%;
+    float: left;
+    font-family:@font-swatch4-font-family;
+    font-size: @font-swatch5-font-size;
+    font-weight:@font-swatch4-font-weight;
+    line-height:@font-swatch4-line-height;
+    color: @color-swatch4;
+    letter-spacing: @font-swatch4-letter-spacing;
+}
+
+.widget.contactform fieldset input {
+    height: 50px;
+    width: 100%;
+    background-color: @color-swatch1;
+    border: 1px solid fade(@color-swatch3, 25%);
+    font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    color: @font-swatch5-color;
+    text-indent: 12px;
+    margin-top: 6px;
+    margin-bottom: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0;
+}
+
+.widget.contactform fieldset textarea {
+    height: 132px;
+    width: 100%;
+    background-color: @color-swatch1;
+    border: 1px solid fade(@color-swatch3, 25%);
+    font-family: @font-swatch5-font-family;
+    font-size: @font-swatch5-font-size;
+    color: @font-swatch5-color;
+    text-indent: 8px;
+    padding-top: 14px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    resize: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0;
+}
+
+.widget.contactform fieldset input:focus, .widget.contactform fieldset textarea:focus {
+  outline: none;
+}
+
+
+
+/* PLACEHOLDER CSS */
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    @color-swatch5;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:   @color-swatch5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    @color-swatch5;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    @color-swatch5;
+}
+
+.widget.contactform fieldset button.btn {
+    padding: 12px 36px;
+    border: 0;
+    background-color: @font-swatch7-background-color;
+    font-family:@font-swatch7-font-family;
+    font-size:@font-swatch7-font-size;
+    font-weight: @font-swatch7-font-weight;
+    line-height:@font-swatch7-line-height;
+    color: @font-swatch7-color;
+    letter-spacing: @font-swatch7-letter-spacing;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+  
+.widget.contactform fieldset button.btn:hover {
+    background-color: @font-swatch7-background-color-hover;
+    cursor: pointer;
+    -webkit-transition: background-color 0.15s ease-in-out;
+    -moz-transition: background-color 0.15s ease-in-out;
+    -o-transition: background-color 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
+}
+
+input, textarea {
+    background-color: @color-swatch1;
+    border: 1px solid fade(@color-swatch3,30%);
+} 
+
+/* ==================================
+   SOCIAL BAR WIDGET / SOCIAL PROFILE
+   =============================== */
+
+.widget.socialicons,
+.widget.profile .bk-profile-socialicons {
+    padding: 10px 0;
+    font-size: 1em;
+    font-family: @font-swatch7-font-family;
+}
+
+.widget.profile .bk-profile-socialicons span {
+    display: inline-block;
+}
+
+.widget.socialicons span a,
+.widget.profile .bk-profile-socialicons span a {
+    background-color: @font-swatch7-background-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-bottom: 8px;
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+    text-indent: 99999px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.widget.profile .bk-profile-socialicons span a {
+    margin-right: 10px;
+}
+
+.widget.socialicons span a:hover,
+.widget.profile .bk-profile-socialicons span a:hover {
+    background-color: @font-swatch7-background-color-hover
+}
+
+.widget.socialicons, .widget.profile .bk-profile-socialicons {
+  min-height:32px;
+}
+
+.widget.socialicons span a, .widget.profile .bk-profile-socialicons span a {
+  text-align:center;
+}
+
+
+// Responsive Slideshow
+
+.widget.responsiveslideshow {
+    .slideshow-image-list,
+    .slideshow-widget {
+        min-height: 450px;
+        @media @tablet {
+            min-height: 350px;
+        }
+        @media @mobile {
+            min-height: 280px;
+            height: 280px;
+        }
+    }
+    .title {
+        display: block;
+    }
+    .content-wrapper {
+        background: fade(@color-swatch3, 60%);
+    }
+    .slideshow-widget {
+        /* Arrows */
+        .btn-prev,
+        .btn-next {
+            font-size: 0;
+            z-index: 11;
+            text-indent: -99999px;
+            width: 40px;
+            height: 40px;
+            background: fade(@color-swatch2, 60%);
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            @media @mobile {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .btn-prev {
+            &:after {
+                content: "\2190";
+                color: #fff;
+                top: 7px;
+                @media @mobile {
+                    top: 1px;
+                }
+            }
+        }
+        .btn-next {
+            &:after {
+                content: "\2192";
+                color: #fff;
+                top: 7px;
+                @media @mobile {
+                    top: 1px;
+                }
+            }
+        }
+        /* Play Button */
+        .btn-play {
+            background: fade(@color-swatch2, 60%);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            &:after {
+                color: #fff;
+                letter-spacing: -4px;
+                top: 0;
+            }
+        }
+    }
+    /* Slideshow Controls */
+    .slideshow-widget-controls {
+        .dot {
+            width: 11px;
+            height: 11px;
+            margin: 0 8px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            &.selected {
+                background-color: @color-swatch2;
+                border: 0;
+            }
+        }
+    }
+}
+
+.widget.responsiveslideshow .btn-play:after {
+    font-size: 20px;
+}
+
+.widget.responsiveslideshow .slideshow-widget .btn-play {
+    background: fade(@color-swatch2, 60%);
+    font-size: 0;
+    text-indent: -99999px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 12;
+    width: 42px;
+    height: 42px;
+    top: -5%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    @media @mobile {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.widget.responsiveslideshow .slideshow-widget .btn-play:after {
+    top:-7px;
+    @media @mobile {
+        top: -15px;
+    }
+}
+
+
+/* ===============================
+   BLOG
+   =============================== */
+
+.widget {
+    &.blogpostlist {
+        .blog-post-item {
+            padding: 30px;
+            border: 1px solid darken(@color-swatch1,10%);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px; 
+            border-radius: 4px;
+        }
+        .blog-post-feature-image-wrap {  /* Blog post feature image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            //height: 250px;
+            //width: 250px;
+            margin-bottom: 20px;
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+.blog-post-item {
+    margin: 1.5em 0;
+    padding-bottom: 1em;
+    h2 {
+        a {
+            font-family: @font-swatch2-font-family;
+            font-size: @font-swatch2-font-size;
+            font-weight: @font-swatch2-font-weight;
+            line-height: @font-swatch2-line-height;
+            color: @font-swatch2-color;
+            letter-spacing: @font-swatch2-letter-spacing;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.blog-post-metadata {
+    background-color: transparent;
+    background-image: none;
+    margin-top: 0;
+    text-align: left;
+}
+
+.blog-list-footer {
+    background-color: transparent;
+    background-image: none;
+}
+
+.blog-post-more-link {
+    float: left;
+    width: 100%;
+}
+
+/* BLOG SEARCH */
+.blogsearch {
+    form {
+        background-color: fade(@color-swatch3, 7%);
+        border: 1px solid fade(@color-swatch3, 20%);
+        padding: 20px 30px;
+        label {
+            display: block;
+            margin-bottom: .6em;
+            font-family: @font-swatch4-font-family;
+            font-size: @font-swatch4-font-size;
+            font-weight: @font-swatch4-font-weight;
+            line-height: @font-swatch4-line-height;
+            color: @font-swatch4-color;
+            letter-spacing: @font-swatch4-letter-spacing;
+        }
+        input {
+            height: 45px;
+            width: 75%;
+            margin-bottom: 10px;
+            background-color: @color-swatch1;
+            border: 1px solid fade(@color-swatch3,25%);
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            padding-left: 10px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        button {
+            background-color: @font-swatch7-background-color;
+            font-family: @font-swatch7-font-family;
+            font-size: @font-swatch7-font-size;
+            font-weight: @font-swatch7-font-weight;
+            line-height: @font-swatch7-line-height;
+            color: @font-swatch7-color;
+            letter-spacing: @font-swatch7-letter-spacing;
+            padding: 10px 16px;
+            margin: 0;
+            border: none;
+            text-decoration: none;
+            width: 25%;
+            &:hover {
+                background-color: @font-swatch7-background-color-hover;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.blog-post-feature-image-wrap {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 2em;
+  background-size: cover;
+  background-position: center;
+  img {
+    display: none;
+  }
+}
+
+.blog-post-sharing {
+  margin-top:10px;
+}
+
+/* ===============================
+   MENU
+   =============================== */
+
+.menu {
+    .menu-item-image-wrap {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 180px;
+        margin: 0.25em 0 0.75em;
+        background-position: center;
+        @media @mobile {
+           margin: 1em 0 0.5em;
+        }
+        img {
+           display: none;
+        }
+    }
+    .menu-items {
+        .menu-item {
+            padding: 30px;
+            border: 1px solid darken(@color-swatch1,10%);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px; 
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// MENU
+
+.dietary-icon {
+  padding: 0 10px;
+  font-size: 12px;
+  background-color: lighten(@color-swatch2, 10%);
+  color:@font-swatch7-color;
+}
+
+.menu .menu-items .menu-item {
+    border: 1px solid fade(@color-swatch3, 20%);
+}
+
+.menu-item-promoted {
+  background-color: fade(@color-swatch3, 7%);
+  padding:20px!important;
+}
+
+.menu-subsection-wrapper.menu-subsection-promoted {
+  background-color: fade(@color-swatch3, 7%);
+  padding:40px;
+  border: 1px solid fade(@color-swatch3, 20%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px; 
+  border-radius: 4px;
+}
+
+.menu .menu-subsection {
+  padding:0;
+}
+
+
+
+// ECOM
+
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select {
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    appearance: none;
+    outline: none !important;
+    -moz-outline-style: none;
+    position: relative;
+    background: transparent;
+    padding: 10px 23px 10px 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-image: image('/images/arrow.png');
+    background-position: right 6% center;
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 53%;
+    background-color: @color-swatch1;
+    border: 1px solid fade(@color-swatch3,30%);
+}
+
+.widget.ecomcheckout .delivery select {
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    appearance: none;
+    outline: none !important;
+    -moz-outline-style: none;
+    position: relative;
+    background: transparent;
+    padding: 10px 23px 10px 10px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-image: image('/images/arrow.png');
+    background-position: right 6% center;
+    background-repeat: no-repeat;
+    background-position-x: 99%;
+    background-position-y: 53%;
+    background-color: @color-swatch1;
+    border: 1px solid fade(@color-swatch3,30%);
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    appearance: none;
+    outline: none !important;
+    -moz-outline-style: none;
+    position: relative;
+    background: transparent;
+    padding: 10px 23px 10px 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-image: image('/images/arrow.png');
+    background-position: right 6% center;
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 53%;
+    background-color: @color-swatch1;
+    border: 1px solid fade(@color-swatch3,30%);
+}
+
+select::-ms-expand {
+   display: none;
+}
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+}
+
+.ecom-productlist-info {
+    text-align: center;
+}
+
+.ecom-productslist-title {
+    padding:0;
+}
+
+.widget.ecomproductslist label {
+    display: block;
+}
+
+.form-group.productlist-search input {
+    padding: 2px 8px 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-group.productlist-search button.btn {
+    padding: 6px 25px;
+}
+
+// Ecom Basket Summary
+
+.ecombasketsummary a {
+  font-family: @font-swatch7-font-family;
+  font-size: @font-swatch7-font-size;
+  font-weight: @font-swatch7-font-weight;
+}
+
+.basket-summary-product-info a {
+  font-family: @font-swatch6-font-family;
+  font-size: @font-swatch6-font-size;
+  font-weight: @font-swatch6-font-weight;
+}
+
+.ecombasket .ecombasket-pull p {
+  font-family: @font-swatch7-font-family;
+  font-size: @font-swatch7-font-size;
+}
+
+.widget.ecombasket .ecombasket-list-container ul li .ecombasket-item-info .ecombasket-remove-button {
+    border: 0;
+    text-decoration: none;
+    color: @color-swatch1;
+    font-family: @font-swatch5-font-family;
+    padding: 5px 10px;
+}
+
+.widget.ecombasketsummary {
+  padding-top:20px;
+  table {
+    border-spacing: 0;
+    width: 100%;
+    list-style: none;
+    font-size: 18px;
+    color: @color-swatch4;
+    margin: 20px 0 30px;
+    @media @tablet {
+      padding: 0px;
+    }
+    @media @mobile {
+      padding: 0px;
+      margin:0px 0px 30px 0px;
+    }
+    tr:first-child { 
+          outline: 1px solid darken(@color-swatch1,10%);
+            background-color: darken(@color-swatch1,4%);
+            -webkit-border-top-left-radius: 4px;
+            -webkit-border-top-right-radius: 4px;
+            -moz-border-radius-topleft: 4px;
+            -moz-border-radius-topright: 4px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            font-family: @font-swatch4-font-family;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: @font-swatch4-color;
+            text-transform: uppercase;
+            @media @mobile {
+                font-size: 12px;
+                display: none!important;
+            }
+      @media @mobile {
+        font-size: 12px;
+          display: table-header-group;
+          th:nth-child(2) {
+            display: none;
+          }
+          th:nth-child(3) {
+            padding-left: 12px;
+          }
+      }
+    }
+    th {
+      text-align: left;
+      position: relative;
+      left: 20px;
+    }
+            tr td {
+            border-bottom: 1px solid darken(@color-swatch1,10%);
+            @media (max-width: 360px) {
+                display: table;
+                width: 100%;
+                border-bottom: 0;
+            }
+            &:nth-child(1),
+            &:nth-child(2) {
+                padding: 20px;
+                vertical-align: top;
+                @media @mobile {
+                  padding:20px 0px;
+                }
+            }
+            &:nth-child(2) {
+                @media (max-width: 530px) {
+                    padding-left: 0;
+                }
+            }
+            &:nth-child(3) {
+                padding: 20px;
+                margin-top:0;
+            }
+            // Responsive
+            &:nth-child(1) {
+                @media (max-width: 360px) {
+                    padding-bottom: 0;
+                }
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                @media (max-width: 360px) {
+                    padding: 0 20px 0;
+                    border-left: 0;
+                }
+            }
+            &:last-child {
+                @media (max-width: 360px) {
+                    padding: 6px 20px;
+                    margin: 20px 0 0;
+                    border-bottom: 1px solid darken(@color-swatch1,10%);
+                    border-top: 1px solid darken(@color-swatch1,10%);
+                }
+            }
+        }
+        tr:last-child td:last-child {
+            @media (max-width: 360px) {
+                border-top: 0;
+                margin-top: 0;
+                padding-top: 0;
+            }
+}
+    .basket-summary-items {
+      background: transparent;
+      @media @tablet {
+                img {
+            max-width:100px!important;
+        }
+              @media @mobile {
+                img {
+            max-width:80px!important;
+        }
+        display: table-row-group;
+        + tr {
+          display: block;
+        }
+      }
+  }
+      &:last-child {
+        td {
+          padding-bottom: 25px;
+        }
+      }
+      .image-wrap {
+        background-image: none!important;
+      }
+      td:nth-child(2) {
+        padding-left: 15px;
+      }
+      .basket-summary-pricepu, .basket-summary-quantity, .basket-summary-amount {
+        font-size: @font-swatch5-font-size;
+        line-height: @font-swatch5-line-height;
+        label {
+          display:block;
+        }
+      }
+      .basket-summary-pricepu {
+        display: block;
+      }
+      .basket-summary-quantity {
+        margin-top: 4px;
+      }
+      .basket-summary-quantity, .basket-summary-quantitybtn {
+        display: inline-block;
+        label {
+          display:block;
+        }
+        span {
+          padding: 5px 25px 6px;
+          margin: 0;
+          position: relative;
+          top: -2px;
+        }
+        button {
+          width: 30px;
+          height: 30px;
+          padding: 0;
+          box-shadow: none;
+          border:0;
+          color:@color-swatch1;
+          background-color:@color-swatch3;
+          margin: 0;
+      &:hover {
+        background-color:darken(@color-swatch3,10%);
+      }
+        }
+      }
+      .basket-summary-amount {
+        color: darken(@color-swatch4, 10%);
+      }
+    }
+    .basket-summary-subtotal {
+      color: darken(@color-swatch4, 10%);
+      display: block;
+      font-size: @font-swatch4-font-size;
+      //line-height: bkscale(@font-swatch5-font-size, 1.1);
+      margin-top: 25px;
+      border: 1px solid @color-swatch7;
+      padding: 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+.basket-summary-submit, .basket-summary-empty-cta {
+  display: inline-block;
+  padding: 0 12px;
+  line-height: 45px;
+  height: 45px;
+  font-weight: @font-swatch7-font-weight;
+}
+
+.basket-summary-empty-cta.btn {
+  background-color:@color-swatch3;
+  text-decoration: none;
+  &:hover {
+    background-color:@color-swatch7;
+  }
+}
+
+.basket-summary-legal-links {
+    padding-top:10px;
+    list-style: none;
+    padding-left:0;
+    &:hover {
+        text-decoration:underline!important;
+    }
+}
+
+.btn.ecom-product-go-to-checkout-btn {
+  background-color:@color-swatch3;
+  padding: 12px 10px;
+  &:hover {
+    background-color:darken(@color-swatch3,20%);
+    text-decoration: none;
+  }
+}
+
+/* ===============================
+   IPAD WIDTH
+   =============================== */
+
+@media only screen and (max-width: 950px) {
+
+    /* NAV */
+
+    .widget .extendednavigation a.pull {
+        top: 28px;
+    }
+
+    .widget.extendednavigation {
+      width:100%;
+    }
+
+    .companyheader {
+      width:90%;
+    }
+
+    .widget.extendednavigation .bk-overlay {
+        height: 40px;
+        top:15px!important;
+    }
+
+    .widget.extendednavigation {
+        float:none; 
+    }
+
+    .widget .extendednavigation ul {
+        width: 100%;
+        display: none;
+        border-top: 1px solid lighten(@color-swatch7,8%);
+        padding: 20px 0;
+        margin:0;
+    }
+
+    .widget .extendednavigation ul li {
+        width: 100%;
+        padding: 0;
+        border-bottom: 0;
+    }
+
+    .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
+      padding: 10px;
+    }
+
+    .widget.extendednavigation ul li:hover > ul {
+        display: block!important;
+        width: 100%;
+        border-top: 1px solid darken(@color-swatch3,15%);
+        margin: 0;
+    }
+
+    .widget .extendednavigation ul.align-right li.folder:after {
+        left: 5px;
+        right: inherit;
+    }
+
+    .widget.extendednavigation li:hover > ul > li > a {
+        padding-right:10px;
+    }
+
+    /* GALLERY */
+
+    .widget.gallery li span.inner .title, .widget.gallery li span.inner .description {
+        font-size:bkscale(@font-swatch5-font-size,0.9);
+        line-height:bkscale(@font-swatch5-line-height,0.9);
+    }
+
+  /* FEATURE */
+
+  .widget.feature {
+    padding: 0;
+  }
+
+   .widget.feature .feature-bgimg {
+    height: 320px;
+   }
+
+  .widget.feature .content {
+    height: 320px;
+  }
+
+  .widget.gallery ul.gallery-widget li {
+      width: 50%;
+      padding-bottom: 50%;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .widget.ecomproductslist label {
+    display: block;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+   /* Tablet view: 2 tiles */
+   .widget.gallery li {
+      width: 50%;
+      /*padding-bottom: 50%;*/
+   }
+}
+
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+   /* Small desktop / ipad view: 3 tiles */
+   .widget.gallery li {
+      width: 33.3%;
+      /*padding-bottom: 33.3%;*/
+   }
+}
+
+/* ===============================
+   IPHONE WIDTH
+   =============================== */
+
+@media only screen and (max-width: 480px) {
+
+  /* UL ALIGN RIGHT */
+
+  .widget.extendednavigation ul.align-right li.folder {
+    background-position: 12px center;
+    padding-right: 0;
+  }
+
+  .widget .extendednavigation ul {
+    margin: 10px 0 0;
+  }
+
+  .widget .extendednavigation a.pull {
+      top: 30px;
+  }
+
+  /* FEATURE */
+
+  .widget.feature {
+    padding: 0;
+  }
+
+  .widget.feature .feature-bgimg {
+    height: 220px; /* should be in media query*/
+   }
+
+  .widget.feature .content {
+    height: 220px;
+  }
+
+  .widget.feature .content .spare {
+    padding: 20px;
+  }
+
+  .widget.feature h2 {
+    margin-bottom: 20px;
+  }
+
+   /* GALLERY */
+
+  .widget.gallery li span.inner .title, .widget.gallery li span.inner .description {
+  max-height: 150px;
+  }
+
+  .widget.gallery p
+  {
+    padding: 10px;
+  }
+
+  /* Smartphone view: 1 tile */
+  .widget.gallery li {
+      width: 100%;
+      padding-bottom: 100%;
+  }
+}
+
+@media only screen and (min-width: 1380px) {
+  .wrapper {
+    width: 1240px; /* 1140px - 10% for margins */
+    margin: 0 auto;
+  }
+}
+
