@@ -325,7 +325,7 @@ div.widget .extendednavigation ul li, div.widget.extendednavigation ul li {
 
 .widget.extendednavigation ul li a, .widget.extendednavigation ul li.folder .text {
   display: block;
-  padding: 12px 25px;
+  padding: 12px 20px;
   text-transform: uppercase;
 }
 
@@ -391,9 +391,9 @@ div.widget .extendednavigation ul li, div.widget.extendednavigation ul li {
     text-align: center;
 }
 
-/* .widget .extendednavigation a.pull {
+.widget .extendednavigation a.pull {
     display: none;
-	    @media @tablet {
+	    @media only screen and (max-width: 950px) {
                 position: absolute;
 			    right: 0;
                 top: -43px; 
@@ -416,8 +416,8 @@ div.widget .extendednavigation ul li, div.widget.extendednavigation ul li {
 					right: 0;
 					box-shadow: 0 6px 0 #c7c7c7, 0 12px 0 #c7c7c7;
                 }
-	    }  */  
-
+	    }
+}
 
 /* ===============================
    FEATURE
@@ -430,6 +430,7 @@ div.widget .extendednavigation ul li, div.widget.extendednavigation ul li {
 
 .widget.feature .feature-bgimg {
   height: 500px; /* should be in media query*/
+  display: inherit;
  }
 
 .widget.feature .content {
@@ -1301,7 +1302,7 @@ input, textarea {
         }
         input {
             height: 45px;
-            width: 75%;
+            width: 70%;
             margin-bottom: 10px;
             background-color: @color-swatch1;
             border: 1px solid fade(@color-swatch3,25%);
@@ -1312,6 +1313,9 @@ input, textarea {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            @media (max-width: 360px) {
+                width: 50%;
+            }
         }
         button {
             background-color: @font-swatch7-background-color;
@@ -1325,10 +1329,13 @@ input, textarea {
             margin: 0;
             border: none;
             text-decoration: none;
-            width: 25%;
+            width: 30%;
             &:hover {
                 background-color: @font-swatch7-background-color-hover;
                 cursor: pointer;
+            }
+            @media (max-width: 360px) {
+                width: 50%;
             }
         }
     }
@@ -1771,7 +1778,8 @@ select::-ms-expand {
     }
 
     .widget.extendednavigation {
-      width:100%;
+      width: 30%;
+      margin-left: 70%;
     }
 
     .companyheader {
