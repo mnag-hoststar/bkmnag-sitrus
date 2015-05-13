@@ -216,14 +216,14 @@ header.bk-header {
 .companyheader {
   display: block;
   float: left;
-  padding: 16px 0px;
+  padding: 12px 0px;
   width: 30%;
 }
 
 /* COMPANY NAME */
 
 .widget.companyname {
-  margin-top: 5px;
+  padding-left: 10px;
   a {
     font-size: @font-swatch10-font-size;
     @media @mobile {
@@ -235,17 +235,17 @@ header.bk-header {
 /* LOGO */
 
 .widget.logo {
-    margin-right: 10px;
-    height: 40px;
+    max-width: 100px;
     a img {
-        max-height: 40px;
+        //max-height: 40px;
     }
 }
 
 .widget {
     &.logo, &.companyname {
-        display: inline-block;
+        display: table-cell;
         vertical-align: middle;
+        z-index: 1000;
     }
 }
 
@@ -449,16 +449,18 @@ div.widget .extendednavigation ul li, div.widget.extendednavigation ul li {
 .widget.feature h2 {
   display: inline-block;
   letter-spacing: 1px;
-  padding-bottom: 0;
+  padding: 20px;
   margin-bottom: 10px;
   text-shadow: 0px 1px 2px fade(@color-swatch7, 70%);
+  background-color: fade(@color-swatch7, 50%);
+  border-radius: 5px;
 }
 
 /* FEATURE STRAPLINE */
 
 .widget.feature h3 {
     font-style: italic;
-    text-shadow: 0px 1px 2px fade(@color-swatch7, 70%);
+    text-shadow: 0px 2px 5px fade(@color-swatch7, 70%);
 }
 
 /* FEATURE BUTTON */
@@ -614,18 +616,17 @@ button, button.btn, .blogsearch form button {
    =============================== */
 
 
-.widget.content
-{
+.widget.content {
     padding: 0;
     overflow: hidden;
 }
 
-.widget.content span.expand
-{
-    font-family: @font-swatch3-font-family;
-    background-color: @color-swatch3;
+.widget.content span.expand {
+    font-family: @font-swatch7-font-family;
+    background-color: @font-swatch7-background-color;
     color: @font-swatch7-color;
-    font-size: @font-swatch5-font-size;
+    font-size:@font-swatch7-font-size;
+    text-transform: uppercase;
     padding: 4px 8px;
     margin: 4px 0;
     cursor: pointer;
@@ -633,10 +634,9 @@ button, button.btn, .blogsearch form button {
 }
 
 .widget.content span.expand:hover,
-.widget.content span.expand:focus
-{
+.widget.content span.expand:focus {
     cursor: pointer;
-    background-color: darken(@color-swatch3,5%);
+    background-color: @font-swatch7-background-color-hover;
 }
 
 @media only screen and (min-width: 768px) {
@@ -775,6 +775,14 @@ hr.line.align-right {
 }
 
 /* ===============================
+   MAP WIDGET
+   =============================== */
+   
+.widget.map {
+    margin: 20px 0;
+}
+
+/* ===============================
    REDIRECT WIDGET
    =============================== */
 
@@ -820,8 +828,10 @@ hr.line.align-right {
 
 .widget.twitter a {
    color: @font-swatch5-color;
+   font-size: @font-swatch5-font-size;
+   font-weight: @font-swatch5-font-weight;
+   line-height: @font-swatch5-line-height;
    text-decoration: none;
-   padding-bottom: 4px;
 }
 
 .widget.twitter span a {
@@ -937,6 +947,10 @@ hr.line.align-right {
 /* ===============================
    CONTACT FORM WIDGET
    =============================== */
+
+.widget.contactform {
+    margin: 10px 0;
+}
 
 .widget.contactform form {
     display: block;
@@ -1104,6 +1118,7 @@ input, textarea {
 // Responsive Slideshow
 
 .widget.responsiveslideshow {
+    margin: 20px 0;
     .slideshow-image-list,
     .slideshow-widget {
         min-height: 450px;
@@ -1778,12 +1793,11 @@ select::-ms-expand {
     }
 
     .widget.extendednavigation {
-      width: 30%;
-      margin-left: 70%;
+      width: 100%;
     }
 
     .companyheader {
-      width:90%;
+      width: 90%;
     }
 
     .widget.extendednavigation .bk-overlay {
