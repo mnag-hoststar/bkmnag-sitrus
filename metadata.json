@@ -1,7 +1,7 @@
 {
     "name":"Sitrus",
-    "thumbnail":"sitrus.png",
-    "screenshot":"sitrus.png",
+    "thumbnail":"thumbnail.png",
+    "screenshot":"sitrus-screenshot.jpg",
     "templateType":"standard",
     "pageTypes":["home"],
     "tags": {
@@ -15,8 +15,8 @@
             "color1":"#ffffff",
             "color2":"#f37d00",
             "color3":"#63b29f",
-            "color4":"#838383",
-            "color5":"#acacac",
+            "color4":"#676767",
+            "color5":"#949494",
             "color6":"#ffffff",
             "color7":"#1e2b2f"
         },
@@ -96,7 +96,7 @@
             "font-size": "16px",
             "font-weight": "300",
             "line-height": "26px",
-            "color": "@color-swatch4",
+            "color": "@color-swatch5",
             "letter-spacing": "inherit"
         },
         "font6": {
@@ -105,7 +105,7 @@
             "font-weight": "700",
             "line-height": "28px",
             "color": "@color-swatch1",
-            "color-hover": "@color-swatch7",
+            "color-hover": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch7",
             "background-color-hover": "@color-swatch2"
