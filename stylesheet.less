@@ -946,76 +946,74 @@ hr.line.align-right {
 	 CONTACT FORM WIDGET
 	 =============================== */
 
-.widget.contactform {
+.contactform, .advancedcontactform {
 		margin: 10px 0;
 }
 
-.widget.contactform form {
-		display: block;
-		padding: 30px;
-		margin: 0 0 20px;
-		background-color: fade(@color-swatch3, 7%);
-		border: 1px solid fade(@color-swatch3, 20%);
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		border-radius: 3px;
+.contactform form, .advancedcontactform form {
+	display: block;
+	padding: 30px;
+	margin: 0 0 20px;
+	background-color: fade(@color-swatch3, 7%);
+	border: 1px solid fade(@color-swatch3, 20%);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
-.widget.contactform fieldset {
-		border: none;
-		padding: 0;
-		margin: 0;
+.contactform fieldset, .advancedcontactform fieldset {
+	margin: 0;
 }
 
-.widget.contactform fieldset label {
-		width: 100%;
-		float: left;
-		font-family:@font-swatch4-font-family;
-		font-size: @font-swatch5-font-size;
-		font-weight:@font-swatch4-font-weight;
-		line-height:@font-swatch4-line-height;
-		color: @color-swatch4;
-		letter-spacing: @font-swatch4-letter-spacing;
+.contactform label, .advancedcontactform label {
+	font-family:@font-swatch4-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight:@font-swatch4-font-weight;
+	line-height:@font-swatch4-line-height;
+	color: @color-swatch4;
+	letter-spacing: @font-swatch4-letter-spacing;
 }
 
-.widget.contactform fieldset input {
-		height: 50px;
-		width: 100%;
-		background-color: @color-swatch1;
-		border: 1px solid fade(@color-swatch3, 25%);
-		font-family: @font-swatch5-font-family;
-		font-size: @font-swatch5-font-size;
-		color: @font-swatch5-color;
-		text-indent: 12px;
-		margin-top: 6px;
-		margin-bottom: 30px;
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		border-radius: 3px;
-		padding: 0;
+.contactform input, .advancedcontactform input {
+	height: 50px;
+	width: 100%;
+	background-color: @color-swatch1;
+	border: 1px solid fade(@color-swatch3, 25%);
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	color: @font-swatch5-color;
+	text-indent: 12px;
+	margin-top: 6px;
+	margin-bottom: 30px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0;
+	&:focus {
+		outline: none;
+	}
 }
 
-.widget.contactform fieldset textarea {
-		height: 132px;
-		width: 100%;
-		background-color: @color-swatch1;
-		border: 1px solid fade(@color-swatch3, 25%);
-		font-family: @font-swatch5-font-family;
-		font-size: @font-swatch5-font-size;
-		color: @font-swatch5-color;
-		text-indent: 8px;
-		padding-top: 14px;
-		margin-top: 6px;
-		margin-bottom: 20px;
-		resize: none;
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		border-radius: 3px;
-		padding: 0;
-}
-
-.widget.contactform fieldset input:focus, .widget.contactform fieldset textarea:focus {
-	outline: none;
+.contactform textarea, .advancedcontactform textarea {
+	height: 132px;
+	width: 100%;
+	background-color: @color-swatch1;
+	border: 1px solid fade(@color-swatch3, 25%);
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	color: @font-swatch5-color;
+	text-indent: 8px;
+	padding-top: 14px;
+	margin-top: 6px;
+	margin-bottom: 20px;
+	resize: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0;
+	&:focus {
+		outline: none;
+	}
 }
 
 
@@ -1035,27 +1033,22 @@ hr.line.align-right {
 		color:    @color-swatch5;
 }
 
-.widget.contactform fieldset button.btn {
-		padding: 12px 36px;
-		border: 0;
-		background-color: @font-swatch7-background-color;
-		font-family:@font-swatch7-font-family;
-		font-size:@font-swatch7-font-size;
-		font-weight: @font-swatch7-font-weight;
-		line-height:@font-swatch7-line-height;
-		color: @font-swatch7-color;
-		letter-spacing: @font-swatch7-letter-spacing;
-		text-decoration: none;
-		text-transform: uppercase;
-}
-	
-.widget.contactform fieldset button.btn:hover {
+.contactform button, .contactform button.btn, .advancedcontactform button, .advancedcontactform button.btn {
+	padding: 12px 36px;
+	border: 0;
+	background-color: @font-swatch7-background-color;
+	font-family:@font-swatch7-font-family;
+	font-size:@font-swatch7-font-size;
+	font-weight: @font-swatch7-font-weight;
+	line-height:@font-swatch7-line-height;
+	color: @font-swatch7-color;
+	letter-spacing: @font-swatch7-letter-spacing;
+	text-decoration: none;
+	text-transform: uppercase;
+	&:hover {
 		background-color: @font-swatch7-background-color-hover;
 		cursor: pointer;
-		-webkit-transition: background-color 0.15s ease-in-out;
-		-moz-transition: background-color 0.15s ease-in-out;
-		-o-transition: background-color 0.15s ease-in-out;
-		transition: background-color 0.15s ease-in-out;
+	}
 }
 
 input, textarea {
