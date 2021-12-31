@@ -844,10 +844,10 @@ div.widget.extendednavigation ul li {
 				position: absolute;
 				width: 26px;
 				height: 3px;
-				background: #c7c7c7;
+				background: darken(@color-swatch1, 22%);
 				top: 0;
 				right: 0;
-				box-shadow: 0 6px 0 #c7c7c7, 0 12px 0 #c7c7c7;
+				box-shadow: 0 6px 0 darken(@color-swatch1, 22%), 0 12px 0 darken(@color-swatch1, 22%);
 			}
 		}
 		
@@ -1260,7 +1260,7 @@ hr.line {
 		background-repeat: no-repeat;
 		background-position: right center;
 		font-size: 12px;
-		text-shadow: 0 1px 0 rgba(255,255,255,.5);
+		text-shadow: 0 1px 0 fade(@color-swatch1, 50%);
 		text-decoration: none;
 		cursor: pointer;
 		color: @font-swatch5-color;
@@ -1609,7 +1609,7 @@ textarea {
 		.btn-prev {
 			&:after {
 				content: "\2190";
-				color: #fff;
+				color: @color__button--text;
 				top: 7px;
 
 				@media @mobile {
@@ -1621,7 +1621,7 @@ textarea {
 		.btn-next {
 			&:after {
 				content: "\2192";
-				color: #fff;
+				color: @color__button--text;
 				top: 7px;
 
 				@media @mobile {
@@ -1637,7 +1637,7 @@ textarea {
 			border-radius: 4px;
 			
 			&:after {
-				color: #fff;
+				color: @color__button--text;
 				letter-spacing: -4px;
 				top: 0;
 			}
