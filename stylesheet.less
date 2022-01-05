@@ -1015,7 +1015,8 @@ div.widget.extendednavigation ul li {
 
 // BUTTON
 
-.widget.button {
+.widget.button,
+.userregistration fieldset .userregistrationbtn {
 	padding: 0;
 
 	button {
@@ -1062,7 +1063,8 @@ div.widget.extendednavigation ul li {
 
 button,
 button.btn,
-.blogsearch form button {
+.blogsearch form button,
+.userregistration fieldset .userregistrationbtn {
 	 background-color: @font-swatch7-background-color;
 	 text-transform: uppercase;
 
@@ -1086,6 +1088,14 @@ button.btn,
 		color: @contrast--accent;
 	} 
 }
+
+// INPUT AND TEXTAREA
+
+input,
+textarea {
+		background-color: @color-swatch1;
+		border: 1px solid fade(@color-swatch3,30%);
+} 
 
 // CONTENT
 
@@ -1349,7 +1359,6 @@ hr.line {
 	-webkit-font-smoothing: initial;
 	text-transform: uppercase;
 }
-
 
 // SIGNUP FORM
 
@@ -1688,12 +1697,6 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 	color: @color-swatch5;
 }
 
-input,
-textarea {
-		background-color: @color-swatch1;
-		border: 1px solid fade(@color-swatch3,30%);
-} 
-
 // SOCIAL BAR AND SOCIAL PROFILE
 
 .widget.socialicons,
@@ -1733,7 +1736,7 @@ textarea {
 	}
 }
 
-// Responsive Slideshow
+// RESPONSIVE SLIDESHOW
 
 .widget.responsiveslideshow {
 	margin: 20px 0;
@@ -1862,6 +1865,42 @@ textarea {
 		
 			@media @mobile {
 				top: -15px;
+			}
+		}
+	}
+}
+
+// REGISTERATION FORM
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
 			}
 		}
 	}
@@ -2039,8 +2078,6 @@ textarea {
 		}
 	}
 }
-
-// MENU
 
 .dietary-icon {
 	padding: 0 10px;
