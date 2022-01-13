@@ -2184,6 +2184,25 @@ select,
 	text-align: center;
 }
 
+// Product
+
+.widget.ecomproduct {
+	.product-actions {
+		button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
+		}
+	}
+}
+
 // Ecom Basket Summary
 
 .widget.ecombasket {
