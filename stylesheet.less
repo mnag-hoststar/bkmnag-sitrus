@@ -123,14 +123,40 @@ code {
 blockquote {
 	background-color: darken(@color-swatch1, 5%);
 	border-radius: 4px;
-	
+
+	.style--light & {
+		background-color: darken(@color--light, 5%);
+	}
+
+	.style--accent & {
+		background-color: darken(@color--accent, 5%);
+	}
+
+	.style--dark & {
+		background-color: darken(@color--dark, 5%);
+	}
+
 	&:before {
 		content: open-quote;
 		left: 10px;
 		top: 22px;
-		font-family: georgia;
+		font-family: Georgia;
 		font-size: 40px;
 		color: @color-swatch3;
+
+		.style--light & {
+			color: @color--accent;
+		}
+
+		.style--accent & {
+			color: @contrast--accent;
+		}
+
+		.style--dark & {
+			color: @color--accent;
+		}
+	}
+}
 	}
 }
 
