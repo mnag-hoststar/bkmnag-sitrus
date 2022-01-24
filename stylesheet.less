@@ -670,6 +670,7 @@ footer .widget.profile .bk-profile-socialicons span a {
 
 // EXTENDED NAVIGATION
 
+.widget.navigation,
 .widget.extendednavigation {
 	.clearfix;
 	display: inline-block;
@@ -689,150 +690,7 @@ footer .widget.profile .bk-profile-socialicons span a {
 		}
 	}
 
-	ul {
-		float: left;
-		margin: 0;
-		padding: 0;
-
-		@media @tablet {
-			width: 100%;
-			display: none;
-			border-top: 1px solid lighten(@color-swatch7, 8%);
-			padding: 20px 0;
-			margin: 0;
-		}
-
-		@media @mobile {
-			margin: 10px 0 0;
-		}
-
-		li {
-			float: left;
-			display: block;
-
-			@media @tablet {
-				width: 100%;
-				padding: 0;
-				border-bottom: 0;
-			}
-
-			&.folder {
-				&:hover {
-					background-color: @color-swatch2;
-				}
-			}
-
-			a,
-			&.folder .text {
-				display: block;
-				padding: 12px 20px;
-				text-transform: uppercase;
-
-				@media @tablet {
-					padding: 10px;
-				}
-			}
-
-			a:hover {
-				text-decoration: none;
-				color: @font-swatch6-color;
-			}
-
-			// SELECTED
-
-			&.selected {
-				span.text {
-					color: @color-swatch1;
-				}
-			}
-
-			// FOLDER
-
-			&.folder {
-				margin-right: 0;
-
-				&:after {
-					right: 11px;
-					top: 49%;
-				}
-
-				.text:hover {
-					color: @color-swatch1;
-					background-color: @color-swatch2;
-				}
-
-				ul li a {
-					padding: 0;
-				}
-			}
-
-			// DROPDOWN MENU
-
-			&:hover > ul {
-				background-color: @color-swatch2;
-				padding: 0;
-
-				@media @tablet {
-					display: block !important;
-					width: 100%;
-					border-top: 1px solid darken(@color-swatch3, 15%);
-					margin: 0;
-				}
-			}
-		}
-	}
-
-	ul.align-right li.folder {
-		@media @mobile {
-			background-position: 12px center;
-			padding-right: 0;
-		}
-	}
-
-	ul li:hover ul li a span.text:hover {
-		background-color: darken(@color-swatch2, 5%);
-	}
-
-	li:hover > ul > li {
-		display: block;
-		width: 100%;
-		padding: 0;
-		box-sizing: border-box;
-
-		a {
-			@media @tablet {
-				padding-right: 10px;
-			}
-		}
-	}
-}
-
-div.widget .extendednavigation ul li,
-div.widget.extendednavigation ul li {
-	padding: 10px;
-
-	&:hover {
-		background-color: @font-swatch6-background-color-hover;
-	}
-}
-
-.widget .extendednavigation {
-	ul li.folder:after {
-		border-top-color: @font-swatch6-color;
-	}
-
-	ul.align-right li.folder:after {
-		@media @tablet {
-			left: 5px;
-			right: inherit;
-		}
-	}
-
-	li ul {
-		left: 0;
-		width: 100%;
-		text-align: center;
-	}
+	// Mobile Menu
 
 	a.pull {
 		display: none;
@@ -865,6 +723,169 @@ div.widget.extendednavigation ul li {
 
 		@media @mobile {
 			top: 30px;
+		}
+	}
+
+	// Menu Points
+
+	ul {
+		float: left;
+		margin: 0;
+		padding: 0;
+
+		@media @tablet {
+			width: 100%;
+			display: none;
+			border-top: 1px solid lighten(@color-swatch7, 8%);
+			padding: 20px 0;
+			margin: 0;
+		}
+
+		@media @mobile {
+			margin: 10px 0 0;
+		}
+
+		// Menu Point
+
+		li {
+			float: left;
+			display: block;
+			padding: 10px;
+		
+			&:hover {
+				background-color: @font-swatch6-background-color-hover;
+			}
+
+			@media @tablet {
+				width: 100%;
+				padding: 0;
+				border-bottom: 0;
+			}
+
+			a,
+			&.folder .text {
+				display: block;
+				padding: 12px 20px;
+				text-transform: uppercase;
+
+				@media @tablet {
+					padding: 10px;
+				}
+			}
+
+			a:hover {
+				text-decoration: none;
+				color: @font-swatch6-color;
+			}
+
+			&.selected {
+				span.text {
+					color: @color-swatch1;
+				}
+			}
+
+			// Folder
+
+			&.folder {
+				margin-right: 0;
+
+				&:hover {
+					background-color: @color-swatch2;
+				}
+
+				.text:hover {
+					color: @color-swatch1;
+					background-color: @color-swatch2;
+				}
+	
+				&:after {
+					content: none;
+				}
+					
+				> .text {
+					// Folder Arrow
+
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 50%;
+						right: 0.5em;
+						border: 2px solid fade(@font-swatch6-color, 60%);
+						border-top: transparent;
+						border-left: transparent;
+						transform: rotate(45deg);
+						margin-top: -0.5em;
+						width: 0.5em;
+						height: 0.5em;
+					}
+				
+					&:hover:after {
+						border-color: @font-swatch6-color-hover;
+					}
+				}
+
+				// Dropdown
+
+				> ul,
+				&:hover > ul {
+					left: 0;
+					background-color: @color-swatch2;
+					padding: 0;
+					width: 100%;
+	
+					@media @tablet {
+						display: block !important;
+						width: 100%;
+						border-top: 1px solid darken(@color-swatch3, 15%);
+						margin: 0;
+					}
+
+					li {
+						display: block;
+						width: 100%;
+						padding: 0;
+						box-sizing: border-box;
+
+						a {
+							padding: 0;
+
+							@media @tablet {
+								padding-right: 10px;
+							}
+							
+							span.text:hover {
+								background-color: darken(@color-swatch2, 5%);
+							}
+						}
+					}
+				}
+			}
+
+			// Folder Open
+	
+			&.folder-open ul,
+			&.folder-open:hover ul {
+				display: block;
+
+				@media @tablet {
+					display: block;
+				}
+			}
+		}
+
+		&.align-right li.folder {
+			@media @mobile {
+				background-position: 12px center;
+				padding-right: 0;
+			}
+	
+			&:after {
+				@media @tablet {
+					left: 5px;
+					right: inherit;
+				}
+			}
 		}
 	}
 }
