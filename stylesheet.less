@@ -1071,25 +1071,46 @@ form.blog-search-form .form-group button {
 	line-height: @font-swatch7-line-height;
 	color: @font-swatch7-color;
 	letter-spacing: @font-swatch7-letter-spacing;
-}
-
-.widget.dropbox button {
+	text-decoration: none;
 	text-transform: uppercase;
-}
+	text-align: center;
+	text-shadow: none;
+	border: none;
+	-webkit-font-smoothing: subpixel-antialiased !important;
+	-webkit-transition: background-color 0.15s ease-in-out;
+	-moz-transition: background-color 0.15s ease-in-out;
+	-o-transition: background-color 0.15s ease-in-out;
+	transition: background-color 0.15s ease-in-out;
 
-.widget.clicktocall a {
-	text-transform: uppercase;
-}
+	.style--light & {
+		background-color: @color--accent;
+		color: @contrast--accent;
+	}
 
-button,
-button.btn,
-.blogsearch form button,
-.userregistration fieldset .userregistrationbtn {
-	background-color: @font-swatch7-background-color;
-	text-transform: uppercase;
+	.style--accent & {
+		background-color: @color--dark;
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		background-color: @color--accent;
+		color: @contrast--accent;
+	}
 
 	&:hover {
 		background-color: @font-swatch7-background-color-hover;
+
+		.style--light & {
+			background-color: lighten(@color--accent, 5%);
+		}
+	
+		.style--accent & {
+			background-color: lighten(@color--dark, 5%);
+		}
+	
+		.style--dark & {
+			background-color: lighten(@color--accent, 5%);
+		}
 	}
 }
 
@@ -1106,6 +1127,28 @@ button.btn,
 
 	.style--dark & {
 		color: @contrast--accent;
+	}
+}
+
+// Image Buttons
+
+.widget.tweet a,
+.widget.dropbox button,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.filedownload .btn,
+.widget.clicktocall a {
+	padding-left: 50px;
+	background-position: 18px center;
+
+	&:hover {
+		padding-left: 50px;
+		background-position: 18px center;
+	}
+}
+
+.widget.clicktocall a {
+	&, &:hover, &:focus {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTg4MDkxNUI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTg4MDkxNkI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMkE4MzU2QjRCQjExRTI5RkMwOEFDNjgzRUY3MzVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1ODgwOTE0QjRENzExRTI5RkMwOEFDNjgzRUY3MzVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s2QrvwAAAPxJREFUeNpi/P//PwM1ARMDlQE2A7uAGOTsHWSZCPIyFHMC8cz/qMASSZ4ojOzCCUCchmafOyVeVsIiHwXE7OQa+BaLPC8Uk2XgdiD+icR/DMS2QPyG3EhhAeIFSBEyk9QIAadpNAFDJAP/ArE+pQaCcDOSoSepYSAIH0EydCuaHCMQ8wIxEykGigHxPSRDzwOxGlQuDIi/AfExIG4BYn8gFiBkIAjLAfFjJEM/AfFGIH7zHxMcAGJ1QgaCsDAQn/hPGDwCYhdiDIThRgIGNhPjZXSsAsQLockJGUxHVsdIYgELylmJQOwHxPxAfAGIa4D4C0wB46AvsQECDAB0BaRrDCyrSQAAAABJRU5ErkJggg==);
 	}
 }
 
@@ -1378,13 +1421,6 @@ hr.line {
 	.twitter-content span.bk-full-name {
 		line-height: 40px;
 	}
-}
-
-// TWEET THIS
-
-.widget.tweet a {
-	-webkit-font-smoothing: initial;
-	text-transform: uppercase;
 }
 
 // SIGNUP FORM
