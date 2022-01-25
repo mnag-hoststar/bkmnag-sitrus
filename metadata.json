@@ -118,7 +118,7 @@
             "color": "@color-swatch1",
             "letter-spacing": "inherit",
             "background-color": "@color-swatch2",
-            "background-color-hover": "lighten(@color-swatch2,5%)"
+            "background-color-hover": "lighten(@color-swatch2, 5%)"
         },
         "font8": {
             "font-family": "\"Bree Serif\", \"Merriweather\", Georgia, serif",
