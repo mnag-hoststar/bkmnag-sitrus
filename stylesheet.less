@@ -1198,7 +1198,7 @@ form textarea {
 	}
 }
 
-// Gallery
+// GALLERY
 
 .widget.gallery {
 	margin: 20px 0 20px -0.5%;
@@ -1285,7 +1285,7 @@ form textarea {
 	}
 }
 
-// Lightbox
+// LIGHTBOX
 
 .lb-data .lb-caption,
 .lb-data .lb-number {
@@ -1423,6 +1423,12 @@ hr.line {
 	.twitter-content span.bk-full-name {
 		line-height: 40px;
 	}
+}
+
+// FORMS
+
+.form-group {
+	margin-bottom: 1em;
 }
 
 // SIGNUP FORM
@@ -1568,8 +1574,52 @@ hr.line {
 	}
 }
 
-.form-group {
-	margin-bottom: 1em;
+// DROPDOWN
+
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @mobile {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+}
+
+select,
+.widget.ecomcheckout .delivery select,
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select {
+	appearance: none;
+	outline: none !important;
+	position: relative;
+	background: transparent;
+	padding: 10px 23px 10px 10px;
+	border-radius: 3px;
+	background-image: image("/images/arrow.png");
+	background-position: right 6% center;
+	background-repeat: no-repeat;
+	background-position-x: 97%;
+	background-position-y: 53%;
+	background-color: @color-swatch1;
+	border: 1px solid fade(@color-swatch3, 30%);
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+
+	@media @tablet {
+		width: 100%;
+	}
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	option {
+		background-color: @color-swatch1;
+		color: @font-swatch5-color;
+	}
 }
 
 // Radiobuttons and Checkboxes
@@ -2241,39 +2291,6 @@ hr.line {
 				}
 			}
 		}
-	}
-}
-
-select,
-.widget.ecomcheckout .delivery select,
-.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select {
-	appearance: none;
-	outline: none !important;
-	position: relative;
-	background: transparent;
-	padding: 10px 23px 10px 10px;
-	border-radius: 3px;
-	background-image: image("/images/arrow.png");
-	background-position: right 6% center;
-	background-repeat: no-repeat;
-	background-position-x: 97%;
-	background-position-y: 53%;
-	background-color: @color-swatch1;
-	border: 1px solid fade(@color-swatch3, 30%);
-	text-indent: 0.01px;
-	text-overflow: ellipsis;
-
-	@media @tablet {
-		width: 100%;
-	}
-
-	&::-ms-expand {
-		display: none;
-	}
-
-	option {
-		background-color: @color-swatch1;
-		color: @font-swatch5-color;
 	}
 }
 
