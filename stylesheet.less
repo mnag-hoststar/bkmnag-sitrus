@@ -660,14 +660,6 @@ footer.bk-footer {
 	}
 }
 
-footer .widget.profile .bk-profile-socialicons span a {
-	background-color: @color-swatch2;
-
-	&:hover {
-		background-color: darken(@color-swatch2, 5%);
-	}
-}
-
 // EXTENDED NAVIGATION
 
 .widget.navigation,
@@ -1018,6 +1010,11 @@ footer .widget.profile .bk-profile-socialicons span a {
 		border: 0;
 		border-width: 0;
 	}
+    
+    a:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
 
 	span.image-title,
 	span.image-description {
@@ -1138,24 +1135,101 @@ form.blog-search-form .form-group button,
 // Image Buttons
 
 .widget.tweet a,
+.widget.clicktocall a,
 .widget.dropbox button,
-.widget.paypalbuynow .widget.button.paypal,
-.widget.filedownload .btn,
-.widget.clicktocall a {
-	padding-left: 50px;
-	background-position: 18px center;
+.widget.filedownload button.btn {
+	&, &:hover, &:focus {
+		background-image: none;
+	}
+}
+
+.widget.tweet a,
+.widget.clicktocall a,
+.widget.dropbox button span,
+.widget.filedownload button.btn {
+	&:before {
+		float: left;
+		padding-right: 0.5em;
+		background-image: none;
+		font-family:'FontAwesome';
+		font-size: 1.5em;
+	}
+}
+
+.widget.tweet a:before {content: '\f099';}
+.widget.clicktocall a:before {content: '\f095';}
+.widget.dropbox button span:before {content: '\f16b';}
+.widget.filedownload button.btn:before {content: '\f019';}
+
+.widget.paypalbuynow .widget.button.paypal {
+	padding-left: 3.2em;
+    background-size: 1.2em;
+    background-position: 1.25em center;
+}
+
+// SOCIAL BAR AND SOCIAL PROFILE
+
+.widget.socialicons,
+footer.bk-footer .widget.profile .bk-profile-socialicons {
+	padding: 10px 0;
+	min-height: 32px;
+
+	span {
+		display: inline-block;
+
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: none;
+			margin: 0 6px 8px;
+			width: 32px;
+			height: 32px;
+			min-height: 32px;
+			border-radius: 50%;
+			text-indent: 0;
+			font-size: 0;
+
+			&:before {
+				font-family: 'FontAwesome';
+				text-indent: 0;
+				font-size: 24px;
+			}
+		}
+
+		&.bk-socialicons-linkedin a:before {content: '\f0e1';}
+		&.bk-socialicons-twitter a:before {content: '\f099';}
+		&.bk-socialicons-instagram a:before {content: '\f16d';}
+		&.bk-socialicons-pinterest a:before {content: '\f0d2';}
+		&.bk-socialicons-facebook a:before {content: '\f09a';}
+		&.bk-socialicons-rss a:before {content: '\f09e';}
+		&.bk-socialicons-vkontakte a:before {content: '\f189';}
+		&.bk-socialicons-xing a:before {content: '\f168';}
+		&.bk-socialicons-youtube a:before {content: '\f16a';}
+	}
+}
+
+footer.bk-footer .widget.profile .bk-profile-socialicons span a {
+	background-color: @color-swatch2;
 
 	&:hover {
-		padding-left: 50px;
-		background-position: 18px center;
+		background-color: darken(@color-swatch2, 5%);
+
+		.style--light & {
+			background-color: darken(@color--accent, 5%);
+		}
+	
+		.style--accent & {
+			background-color: darken(@color--dark, 5%);
+		}
+	
+		.style--dark & {
+			background-color: darken(@color--accent, 5%);
+		}
 	}
 }
 
-.widget.clicktocall a {
-	&, &:hover, &:focus {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTg4MDkxNUI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTg4MDkxNkI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMkE4MzU2QjRCQjExRTI5RkMwOEFDNjgzRUY3MzVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1ODgwOTE0QjRENzExRTI5RkMwOEFDNjgzRUY3MzVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s2QrvwAAAPxJREFUeNpi/P//PwM1ARMDlQE2A7uAGOTsHWSZCPIyFHMC8cz/qMASSZ4ojOzCCUCchmafOyVeVsIiHwXE7OQa+BaLPC8Uk2XgdiD+icR/DMS2QPyG3EhhAeIFSBEyk9QIAadpNAFDJAP/ArE+pQaCcDOSoSepYSAIH0EydCuaHCMQ8wIxEykGigHxPSRDzwOxGlQuDIi/AfExIG4BYn8gFiBkIAjLAfFjJEM/AfFGIH7zHxMcAGJ1QgaCsDAQn/hPGDwCYhdiDIThRgIGNhPjZXSsAsQLockJGUxHVsdIYgELylmJQOwHxPxAfAGIa4D4C0wB46AvsQECDAB0BaRrDCyrSQAAAABJRU5ErkJggg==);
-	}
-}
+// FORM
 
 // INPUT AND TEXTAREA
 
@@ -1334,35 +1408,6 @@ hr.line {
 
 .widget.map {
 	margin: 20px 0;
-}
-
-// REDIRECT
-
-.widget.redirecttodesktop {
-	padding: 8px 0;
-
-	a {
-		padding-right: 30px;
-		padding-top: 2px;
-		background-image: image("/images/desktop.png");
-		background-repeat: no-repeat;
-		background-position: right center;
-		font-size: 12px;
-		text-shadow: 0 1px 0 fade(@color-swatch1, 50%);
-		text-decoration: none;
-		cursor: pointer;
-		color: @font-swatch5-color;
-		font-family: @font-swatch5-font-family;
-	}
-}
-
-.widget.redirecttodesktop a:hover,
-.desktop a:active {
-	background-image: image("/images/desktop.png");
-	background-repeat: no-repeat;
-	background-position: right center;
-	cursor: pointer;
-	text-decoration: underline;
 }
 
 // TWITTER
@@ -1603,7 +1648,7 @@ select,
 	background: transparent;
 	padding: 10px 23px 10px 10px;
 	border-radius: 3px;
-	background-image: image("/images/arrow.png");
+	background-image: url("data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNCI+Cgk8cG9seWxpbmUgc3Ryb2tlPSIjNzY3ODgwIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjMiIHBvaW50cz0iMjAuMSw4LjYgMTIsMTYuNyAzLjksOC42IiAvPgo8L3N2Zz4=");
 	background-position: right 6% center;
 	background-repeat: no-repeat;
 	background-position-x: 97%;
@@ -1806,45 +1851,6 @@ select,
 
 :-ms-input-placeholder {
 	color: @color-swatch5;
-}
-
-// SOCIAL BAR AND SOCIAL PROFILE
-
-.widget.socialicons,
-.widget.profile .bk-profile-socialicons {
-	padding: 10px 0;
-	min-height: 32px;
-	font-size: 1em;
-	font-family: @font-swatch7-font-family;
-
-	span a {
-		background-color: @font-swatch7-background-color;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 18px;
-		display: inline-block;
-		margin-right: 6px;
-		margin-bottom: 8px;
-		width: 32px;
-		height: 32px;
-		text-decoration: none;
-		text-indent: 99999px;
-		text-align: center;
-		overflow: hidden;
-		white-space: nowrap;
-
-		&:hover {
-			background-color: @font-swatch7-background-color-hover;
-		}
-	}
-}
-
-.widget.profile .bk-profile-socialicons span {
-	display: inline-block;
-
-	a {
-		margin-right: 10px;
-	}
 }
 
 // RESPONSIVE SLIDESHOW

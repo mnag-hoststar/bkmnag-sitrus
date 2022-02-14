@@ -1,7 +1,7 @@
 {
     "name":"Sitrus",
-    "thumbnail":"thumbnail.png",
-    "screenshot":"sitrus-screenshot.jpg",
+    "thumbnail":"images/thumbnail.png",
+    "screenshot":"images/screenshot.jpg",
     "templateType":"standard",
     "pageTypes":["home"],
     "tags": {
