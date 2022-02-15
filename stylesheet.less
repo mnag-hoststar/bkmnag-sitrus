@@ -7,6 +7,29 @@
 @mobile: ~"only screen and (max-width: 480px)";
 @mobile-small: ~"only screen and (max-width: 360px)";
 
+// BASEKIT ELEMENTS
+
+.top-level-overlay button.top-level-overlay__delete-button,
+.row-overlay__delete-button,
+.top-level-overlay button.top-level-overlay__arrangement-button--up,
+.row-overlay__arrangement-button--up,
+.top-level-overlay button.top-level-overlay__arrangement-button--down,
+.row-overlay__arrangement-button--down, .row-overlay__edit-button {
+	background: transparent !important;
+}
+
+.row-overlay__edit-button {
+	background: #fff !important;
+}
+
+.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
+.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
+	left: auto !important;
+    top: auto !important;
+}
+
+// BODY
+
 body {
 	position: relative;
 	background-color: @color-swatch1;
@@ -1561,6 +1584,7 @@ hr.line {
 		letter-spacing: @font-swatch4-letter-spacing;
 		display: block;
 		margin-bottom: 5px;
+		word-break: break-word;
 	}
 
 	input {
@@ -1628,15 +1652,18 @@ hr.line {
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @mobile {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 }
 
 select,
@@ -2163,66 +2190,6 @@ select,
 
 .blog-post-sharing {
 	margin-top: 10px;
-}
-
-// MENU
-
-.menu {
-	.menu-item-image-wrap {
-		background-size: cover;
-		background-repeat: no-repeat;
-		height: 180px;
-		margin: 0.25em 0 0.75em;
-		background-position: center;
-
-		@media @mobile {
-			margin: 1em 0 0.5em;
-		}
-
-		img {
-			display: none;
-		}
-	}
-
-	.menu-items {
-		.menu-item {
-			padding: 30px;
-			border: 1px solid darken(@color-swatch1, 10%);
-			-webkit-border-radius: 4px;
-			-moz-border-radius: 4px;
-			border-radius: 4px;
-			margin-bottom: 30px;
-		}
-	}
-}
-
-.dietary-icon {
-	padding: 0 10px;
-	font-size: 12px;
-	background-color: lighten(@color-swatch2, 10%);
-	color: @font-swatch7-color;
-}
-
-.menu .menu-items .menu-item {
-	border: 1px solid fade(@color-swatch3, 20%);
-}
-
-.menu-item-promoted {
-	background-color: fade(@color-swatch3, 7%);
-	padding: 20px !important;
-}
-
-.menu-subsection-wrapper.menu-subsection-promoted {
-	background-color: fade(@color-swatch3, 7%);
-	padding: 40px;
-	border: 1px solid fade(@color-swatch3, 20%);
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-}
-
-.menu .menu-subsection {
-	padding: 0;
 }
 
 // E-COMMERCE
