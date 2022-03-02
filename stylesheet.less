@@ -68,24 +68,14 @@ h5 {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font-swatch5-font-size !important;
-		line-height: @font-swatch5-line-height !important;
+.widget.content .wysihtml-editor-content,
+.widget.embed .embed-content,
+.widget.content.in-editing .wysihtml-editor-content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
 
-		&,
-		p,
-		span,
-		small,
-		pre,
-		code,
-		table,
-		th,
-		td {
-			color: @font-swatch5-color;
-		}
+	&, p, span, small, pre, code, table, th, td {
+		color: @font-swatch5-color;
 	}
 }
 
@@ -1796,7 +1786,7 @@ select,
 	.label--checkbox,
 	label[for*="input--terms"] {
 		&:after {
-			margin-top: floor(@font-swatch5-line-height*-0.2+3);
+			margin-top: floor(@font-swatch5-line-height*-1.2/4);
 			height: floor(@font-swatch5-line-height*1.2);
 			border: 1px solid transparent;
 			box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
@@ -2322,6 +2312,13 @@ select,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
 	background-position: center;
 	margin-bottom: 20px;
+}
+
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
 }
 
 // Product
