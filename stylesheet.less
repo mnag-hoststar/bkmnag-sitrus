@@ -131,7 +131,7 @@ blockquote {
 
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -406,7 +406,7 @@ tr:last-child td {
 }
 
 .bk-profile-address p:after {
-	content: "";
+	content: '';
 }
 
 // LATEST TWEET IN FOOTER
@@ -665,7 +665,7 @@ footer.bk-footer {
 			padding: 0;
 
 			&:after {
-				content: "";
+				content: '';
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -1024,7 +1024,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -1139,7 +1139,7 @@ form.blog-search-form .form-group button,
 // SOCIAL BAR AND SOCIAL PROFILE
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
 	padding: 10px 0;
 	min-height: 32px;
 
@@ -1179,7 +1179,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	}
 }
 
-footer.bk-footer .widget.profile .bk-profile-socialicons span a {
+.widget.profile .bk-profile-socialicons span a {
 	background-color: @color-swatch2;
 
 	.style--light & {
@@ -1719,7 +1719,7 @@ select,
 		&:after {
 			cursor: pointer;
 			display: block;
-			content: " ";
+			content: ' ';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -1893,7 +1893,7 @@ select,
 
 		.btn-prev {
 			&:after {
-				content: "\2190";
+				content: '\2190';
 				top: 7px;
 
 				@media @mobile {
@@ -1904,7 +1904,7 @@ select,
 
 		.btn-next {
 			&:after {
-				content: "\2192";
+				content: '\2192';
 				top: 7px;
 
 				@media @mobile {
@@ -1937,7 +1937,7 @@ select,
 			}
 
 			&:after {
-				content: "\f04b";
+				content: '\f04b';
 				font-family:'FontAwesome';
 				font-size: 20px;
 				color: @font-swatch7-color;
@@ -1952,7 +1952,7 @@ select,
 
 			&.pause {
 				&:after {
-					content: "\f04c";
+					content: '\f04c';
 				}
 			}
 		}
@@ -2337,6 +2337,33 @@ select,
 			&:before {
 				float: none;
 			}
+		}
+	}
+
+	.ecom-product-tag,
+	.ecom-product-category {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 1em;
+
+		&:after {
+			content: ':\00a0';
+			order: 0;
+			display: inline-block;
+		}
+	}
+
+	.store-category-link,
+	.ecom-product-tag-link {
+		font-weight: 300;
+        order: 1;
+
+		&:after {
+			content: ',\00a0';
+		}
+
+		&:last-child::after {
+			content: none;
 		}
 	}
 }
