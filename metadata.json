@@ -3,6 +3,7 @@
     "thumbnail":"images/thumbnail.png",
     "screenshot":"images/screenshot.jpg",
     "templateType":"standard",
+    "versionTenCompatible": 1,
     "pageTypes":["home"],
     "tags": {
         "en": ["minimal", "color", "photography", "vintage", "modern", "dark", "food", "website", "creative", "fresh", "professional", "unique", "media", "sans-serif"],

@@ -1,0 +1,52 @@
+
+// Template styling resets
+#migrated {
+    .main.wrapper {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+// Row styling tweaks
+#migrated {
+    .row--image-text-7a [data-name="content"] blockquote {
+        padding: 8px 16px;
+    }
+
+    .row--hero-5a .signupform {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// Re-add the reset styles
+#migrated {
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]),
+    .row > .row:not(.row--width-no-padding) .row__container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1240px;
+        width: 90%;
+    }
+
+    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 40px;
+    }
+
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 40px;
+    }
+
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
+        margin-top: 20px;
+    }
+
+    [data-name="row"] .column .widget + .widget {
+        margin-top: 12px;
+    }
+}
