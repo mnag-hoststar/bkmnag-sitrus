@@ -6,27 +6,6 @@
 @mobile-large: ~"only screen and (max-width: 650px) and (min-width: 481px)";
 @mobile: ~"only screen and (max-width: 480px)";
 
-// BASEKIT ELEMENTS
-
-.top-level-overlay button.top-level-overlay__delete-button,
-.row-overlay__delete-button,
-.top-level-overlay button.top-level-overlay__arrangement-button--up,
-.row-overlay__arrangement-button--up,
-.top-level-overlay button.top-level-overlay__arrangement-button--down,
-.row-overlay__arrangement-button--down, .row-overlay__edit-button {
-	background: transparent !important;
-}
-
-.row-overlay__edit-button {
-	background: #fff !important;
-}
-
-.is-dropdown-open .row-overlay__edit-button .row-overlay__edit-button-icon,
-.is-setting-open .row-overlay__edit-button .row-overlay__edit-button-icon {
-	left: auto !important;
-    top: auto !important;
-}
-
 // BODY
 
 body {
@@ -58,6 +37,20 @@ body {
 
 // TYPOGRAPHY
 
+h1, h2, h3, h4, h5, h6 {
+	.style--light & {
+	    color: fade(@contrast--light, 90%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 90%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 90%);
+	}
+}
+
 h5 {
 	font-size: @font-swatch5-font-size;
 	font-family: @font-swatch5-font-family;
@@ -68,6 +61,20 @@ h5 {
 
 // Normal Text
 
+p, .paragraph, ul, ol, li, pre, code, label {
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
+}
+
 .widget.content .wysihtml-editor-content,
 .widget.embed .embed-content,
 .widget.content.in-editing .wysihtml-editor-content {
@@ -76,8 +83,49 @@ h5 {
 
 	&, p, span, small, pre, code, table, th, td {
 		color: @font-swatch5-color;
+
+		.style--light & {
+		    color: fade(@contrast--light, 80%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 80%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 80%);
+		}
 	}
 }
+
+.form__link {
+	.style--light & {
+	    color: fade(@contrast--light, 80%)!important;
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%)!important;
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%)!important;
+	}
+}
+
+.widget.content a {
+	.style--light & {
+	    color: lighten(mix(@color--dark, @color-swatch3, 25%), 15%);
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @color--accent;
+	}
+}
+
 
 // Preformatted and Code Text
 
@@ -103,6 +151,21 @@ blockquote {
 	background-color: fade(@color-swatch3, 7%);
 	border-radius: 3px;
 
+	.style--light & {
+	    background-color: darken(@color--light, 5%);
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    background-color: darken(@color--accent, 5%);
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    background-color: lighten(@color--dark, 8%);
+	    color: fade(@contrast--dark, 80%);
+	}
+
 	&:before {
 		content: open-quote;
 		left: 10px;
@@ -111,12 +174,24 @@ blockquote {
 		font-size: 40px;
 		color: @color-swatch3;
 		word-break: break-word;
+
+		.style--light & {
+		    color: lighten(mix(@color--dark, @color-swatch3, 25%), 15%);
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @color--accent;
+		}
 	}
 }
 
 // Unordered and Ordered List
 
-.widget.content,
+.widget.content .bk-content-text,
 .blog-post-content,
 .ecom-product-long-description {
 	ul {
@@ -1005,12 +1080,36 @@ footer.bk-footer {
 		font-family: @font-swatch4-font-family;
 		font-weight: @font-swatch4-font-weight;
 		font-size: @font-swatch4-font-size;
+
+		.style--light & {
+		    color: @contrast--light;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @contrast--dark;
+		}
 	}
 
 	span.image-description {
 		font-family: @font-swatch5-font-family;
 		font-weight: @font-swatch5-font-weight;
 		font-size: @font-swatch5-font-size;
+
+		.style--light & {
+		    color: fade(@contrast--light, 80%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 80%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 80%);
+		}
 	}
 }
 
@@ -1034,7 +1133,8 @@ button.button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
 form.blog-search-form .form-group button,
-.blog-post-more-link a {
+.blog-post-more-link a,
+a.contentgroup__link {
 	display: inline-block;
 	margin: 0;
 	padding: 12px 36px;
@@ -1058,8 +1158,8 @@ form.blog-search-form .form-group button,
 	transition: background-color 0.15s ease-in-out;
 
 	.style--light & {
-		background-color: @font-swatch7-background-color;
-		color: @font-swatch7-color;
+	    background-color: @color--accent;
+	    color: @contrast--accent;
 	}
 
 	.style--accent & {
@@ -1076,15 +1176,15 @@ form.blog-search-form .form-group button,
 		background-color: @font-swatch7-background-color-hover;
 
 		.style--light & {
-			background-color: @font-swatch7-background-color-hover;
+			background-color: lighten(@color--accent, 10%);
 		}
 	
 		.style--accent & {
-			background-color: lighten(@color--dark, 5%);
+			background-color: lighten(@color--dark, 10%);
 		}
 	
 		.style--dark & {
-			background-color: lighten(@color--accent, 5%);
+			background-color: lighten(@color--accent, 10%);
 		}
 	}
 }
@@ -1093,7 +1193,7 @@ form.blog-search-form .form-group button,
 	color: @font-swatch7-color;
 
 	.style--light & {
-		color: @font-swatch7-color;
+	    color: @contrast--accent;
 	}
 
 	.style--accent & {
@@ -1244,7 +1344,6 @@ form textarea {
 
 .widget.content {
 	padding: 0;
-	overflow: hidden;
 
 	span.expand {
 		font-family: @font-swatch7-font-family;
@@ -1378,6 +1477,19 @@ hr.line {
 	width: 100%;
 	border: none;
 
+	.style--light & {
+	    background-color: fade(@contrast--light, 18%);
+	}
+
+	.style--accent & {
+	    background-color: fade(@contrast--accent, 18%);
+	}
+
+	.style--dark & {
+	    background-color: fade(@contrast--dark, 18%);
+	}
+
+
 	&.align-left {
 		margin: 20px auto 20px 0px;
 	}
@@ -1408,12 +1520,36 @@ hr.line {
 		font-weight: @font-swatch5-font-weight;
 		line-height: @font-swatch5-line-height;
 		text-decoration: none;
+
+		.style--light & {
+		    color: fade(@contrast--light, 80%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 80%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 80%);
+		}
 	}
 
 	span a {
 		border-bottom: 0;
 		font-size: 11px;
 		color: @color-swatch3;
+
+		.style--light & {
+		    color: @color--accent;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @color--accent;
+		}
 	}
 
 	ul {
@@ -1431,6 +1567,18 @@ hr.line {
 			-webkit-border-radius: 4px;
 			-moz-border-radius: 4px;
 			border-radius: 4px;
+
+			.style--light & {
+				color: fade(@contrast--light, 80%);
+			}
+
+			.style--accent & {
+				color: fade(@contrast--accent, 80%);
+			}
+
+			.style--dark & {
+				color: fade(@contrast--dark, 80%);
+			}
 
 			.twitter-profile-pic {
 				float: left;
@@ -1465,6 +1613,18 @@ hr.line {
 
 	time {
 		font-size: 11px;
+
+		.style--light & {
+		    color: fade(@contrast--light, 80%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 80%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 80%);
+		}
 	}
 }
 
@@ -1480,8 +1640,6 @@ hr.line {
 	display: block;
 	padding: 30px;
 	margin: 0 0 20px;
-	background-color: fade(@color-swatch3, 7%);
-	border: 1px solid fade(@color-swatch3, 20%);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -1523,9 +1681,30 @@ hr.line {
 	}
 }
 
+.singupform,
+.contactform form,
+.advancedcontactform form,
+.blogsearch form {
+	background-color: fade(@color-swatch3, 7%);
+	border: 1px solid fade(@color-swatch3, 20%);
+
+	.style--light & {
+		background-color: fade(mix(@contrast--light, @color-swatch3, 30%), 7%);
+		border-color: fade(mix(@contrast--light, @color-swatch3, 30%), 20%)
+	}
+
+	.style--accent & {
+	    background-color: darken(@color--accent, 5%);
+	    border-color: darken(@color--accent, 18%);
+	}
+
+	.style--dark & {
+	    background-color: lighten(@color--dark, 7%);
+	    border-color: lighten(@color--dark, 20%);
+	}
+}
+
 // CONTACT FORM
-
-
 
 .contactform,
 .advancedcontactform,
@@ -1540,6 +1719,18 @@ hr.line {
 		display: block;
 		margin-bottom: 5px;
 		word-break: break-word;
+
+		.style--light & {
+		    color: fade(@contrast--light, 90%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 90%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 90%);
+		}
 	}
 }
 
@@ -1551,8 +1742,6 @@ hr.line {
 		display: block;
 		padding: 30px;
 		margin: 0 0 20px;
-		background-color: fade(@color-swatch3, 7%);
-		border: 1px solid fade(@color-swatch3, 20%);
 		-webkit-border-radius: 3px;
 		-moz-border-radius: 3px;
 		border-radius: 3px;
@@ -1751,7 +1940,7 @@ select,
 			border-radius: 0;
 
 			.style--light & {
-				border-color: @color-swatch1;
+				border-color: @color-accent;
 			}
 
 			.style--accent & {
@@ -1783,8 +1972,8 @@ select,
 			transform: scale(50%);
 
 			.style--light & {
-				background-color: @font-swatch7-background-color;
-				border: 1px solid @font-swatch7-background-color;
+				background-color: @color--accent;
+				border: 1px solid @color--accent;
 			}
 
 			.style--accent & {
@@ -1809,7 +1998,7 @@ select,
 			transform: scale(50%) rotate(45deg);
 
 			.style--light & {
-				box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
+				box-shadow: -6px -6px 0 0 inset @color--accent;
 			}
 
 			.style--accent & {
@@ -1979,13 +2168,35 @@ select,
 			width: 11px;
 			height: 11px;
 			margin: 0 8px;
-			-webkit-border-radius: 50%;
-			-moz-border-radius: 50%;
 			border-radius: 50%;
+
+			.style--light & {
+			    background-color: darken(@color--light, 5%);
+			}
+
+			.style--accent & {
+			    background-color: darken(@color--accent, 5%);
+			}
+
+			.style--dark & {
+			    background-color: darken(@color--dark, 5%);
+			}
 
 			&.selected {
 				background-color: @color-swatch2;
 				border: 0;
+
+				.style--light & {
+				    background-color: @color--accent;
+				}
+
+				.style--accent & {
+				    background-color: @contrast--accent;
+				}
+
+				.style--dark & {
+				    background-color: @color--accent;
+				}
 			}
 		}
 	}
@@ -2033,10 +2244,20 @@ select,
 	.blog-post-item {
 		padding: 30px;
 		border: 1px solid darken(@color-swatch1, 10%);
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
 		border-radius: 4px;
 		margin: 0 0 20px;
+
+		.style--light & {
+		    border-color: darken(@color--light, 10%);
+		}
+
+		.style--accent & {
+		    border-color: darken(@color--accent, 10%);
+		}
+
+		.style--dark & {
+		    border-color: darken(@color--dark, 10%);
+		}
 	}
 
 	.blog-post-feature-image-wrap {
@@ -2070,6 +2291,21 @@ select,
 			}
 		}
 	}
+
+	h2 a,
+	a {
+		.style--light & {
+		    color: fade(@contrast--light, 90%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 90%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 90%);
+		}
+	}
 }
 
 .blog-post-metadata {
@@ -2082,6 +2318,20 @@ select,
 .blog-list-footer {
 	background-color: transparent;
 	background-image: none;
+
+	a {
+		.style--light & {
+		    color: @color--accent;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @color--accent;
+		}
+	}
 }
 
 .blog-post-more-link {
@@ -2117,6 +2367,18 @@ select,
 			line-height: @font-swatch4-line-height;
 			color: @font-swatch4-color;
 			letter-spacing: @font-swatch4-letter-spacing;
+
+			.style--light & {
+			    color: fade(@contrast--light, 90%);
+			}
+
+			.style--accent & {
+			    color: fade(@contrast--accent, 90%);
+			}
+
+			.style--dark & {
+			    color: fade(@contrast--dark, 90%);
+			}
 		}
 
 		input {
@@ -2392,6 +2654,37 @@ select,
 	&:hover {
 		background-color: darken(@color-swatch3, 20%);
 		text-decoration: none;
+	}
+}
+
+.ecom-productlist-price,
+.ecom-featuredproducts-price,
+.productlist-pagination-page a,
+.product-category-items a {
+	.style--light & {
+	    color: lighten(mix(@color--dark, @color-swatch3, 25%), 15%);
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @color--accent;
+	}
+}
+
+.productlist-pagination-page span {
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
 	}
 }
 
@@ -2689,33 +2982,6 @@ select,
 
 		&:hover {
 			text-decoration: underline !important;
-		}
-	}
-}
-
-// WIDGET BUTTONS
-
-.widget-overlay {
-	.widget__list.list--options {
-		display: block;
-		text-align: left;
-		margin: 0;
-	
-		.widget__item {
-			&:hover {
-				background: transparent;
-			}
-
-			&:before {
-				content: none;
-			}
-	
-			.widget__option,
-			.widget__option.option {
-				display: block;
-				text-align: left;
-				line-height: 1em;
-			}
 		}
 	}
 }
