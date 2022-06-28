@@ -195,8 +195,8 @@ blockquote {
 
 // Unordered and Ordered List
 
-.widget.content .bk-content-text,
 .blog-post-content,
+.widget.content .bk-content-text,
 .ecom-product-long-description {
 	ul {
 		margin: 0.5em 0 0.5em 2em;
@@ -210,7 +210,7 @@ blockquote {
 
 			&:before {
 				position: absolute;
-				content: '\2013';
+				content: '\2022';
 				left: -2em;
 			}
 		}
@@ -241,6 +241,22 @@ blockquote {
 				content: counter(ordered-counter) ".";
 				counter-increment: ordered-counter;
 				text-align: left;
+			}
+		}
+	}
+}
+
+.content .widget-overlay {
+	ul.list--options {
+		margin: 0;
+		padding: 0;
+	
+		li.item--option {
+			margin: 0;
+			padding: 0;
+	
+			&:before {
+				content: none;
 			}
 		}
 	}
