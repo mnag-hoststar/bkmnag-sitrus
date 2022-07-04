@@ -2298,6 +2298,33 @@ select,
 	}
 }
 
+.blog-list-footer {
+	margin-bottom: 2em;
+	text-align: center;
+	background-color: transparent;
+	background-image: none;
+
+	.blog-post-pagination-page {
+		margin: 1em;
+	}
+
+	a {
+		.style--light & {
+		    color: @color--accent;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @color--accent;
+		}
+	}
+}
+
+// Single Blog Post
+
 .blog-post-item {
 	margin: 1.5em 0;
 	padding-bottom: 1em;
