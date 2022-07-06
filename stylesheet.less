@@ -2676,6 +2676,8 @@ select,
 	
 		.store-category-link,
 		.ecom-product-tag-link {
+			display: inline-block;
+			word-break: break-word;
 			font-weight: 300;
 			order: 1;
 	
@@ -2727,14 +2729,6 @@ select,
 
 	.style--dark & {
 	    color: fade(@contrast--dark, 80%);
-	}
-}
-
-// Tags
-
-.ecom-product-cattag {
-	a {
-		padding: 0 10px;
 	}
 }
 
